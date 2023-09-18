@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpHub</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            scroll-behavior:smooth;
+        }
+
+        header{
+            width: 100%;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header ul li{
+            display: inline;
+            list-style: none;
+            margin: 0 10px;
+        }
+
+        header ul li a{
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        header h3{
+            margin: 15px 0;
+            color: blue;
+            font-size: 25px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+        }
+
+        header p{
+            color: green;
+            margin-bottom: 10px;
+        }
+
+        .border{
+            width: 95%;
+            margin: 20px auto;
+            border-radius: 10px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .border h3{
+            margin: 10px;
+        }
+
+        .border .feature{
+            margin: 10px;
+        }
+
+        .border .feature p{
+            font-size: 12px;
+            margin: 5px 0;
+        }
+
+        .price{
+            width: 90%;
+            margin: 25px auto;
+            border: 1px solid black;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            border-radius: 10px;
+        }
+
+        .price p{
+            color: grey;
+            font-size: 13px;
+            margin: 10px 0;
+        }
+
+        .contact{
+            padding: 10px 15px;
+            background-color: black;
+            color: white;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: 1s;
+            margin: 10px;
+        }
+
+        .contact:hover{
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        }
+
+        footer{
+            background-color: grey;
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact-us">Contact</a></li>
+        </ul>
+
+        <h3>HelpHub</h3>
+        <p>Ask for anything and help at your wish</p>
+        <button class="contact">Get Started</button>
+    </header>
+
+    <section class="features" id="features">
+        <div class="border">
+            <h3>Features</h3>
+            <div class="feature">
+                <h5>Feature 1</h5>
+                <p>Description of feature 1</p>
+            </div>
+            <div class="feature">
+                <h5>Feature 2</h5>
+                <p>Description of feature 2</p>
+            </div>
+            <div class="feature">
+                <h5>Feature 3</h5>
+                <p>Description of feature 3</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="border">
+            <h3>Pricing</h3>
+            <div class="price">
+                <h4>Basic</h4>
+                <p>$15/Month</p>
+                <p>Feature 1</p>
+                <p>Feature 2</p>
+                <p>Limited Support</p>
+            </div>
+            <div class="price">
+                <h4>Premium</h4>
+                <p>$49/Month</p>
+                <p>All Features</p>
+                <p>Priority Support</p>
+            </div>
+            <div class="price">
+                <h4>Pro</h4>
+                <p>$99/Month</p>
+                <p>All Support</p>
+                <p>Premium Support</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-us" id="contact-us">
+        <div class="border">
+            <h3>Contact Us</h3>
+            <div style="margin-left: 10px; font-size: 12px;">Have questions, you can contact us any time throughout the day!</div>
+            <button class="contact" style="margin-left: 10px;">Contact Us</button>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2023 HelpHub. All Rights Reserved.
+    </footer>
+</body>
+</html>

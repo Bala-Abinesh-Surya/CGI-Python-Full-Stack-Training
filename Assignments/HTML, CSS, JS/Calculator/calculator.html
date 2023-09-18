@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: content-box;
+        }
+
+        .main {
+            margin-top: 50px;
+        }
+
+        .calculator {
+            width: 25%;
+            margin: 20px auto;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #24292e;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .number-input-rows {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .number-input {
+            height: 35px;
+            padding: 5px;
+            margin-bottom: 10px;
+            text-indent: 10px;
+            border-radius: 8px;
+        }
+
+        .keys {
+            width: 100%;
+            border-radius: 10px;
+            padding: 10px 0;
+            margin: 10px 0;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            background-color: #0366d6;
+        }
+
+        .keys:hover {
+            background-color: #34c443;
+            cursor: pointer;
+        }
+
+        .clear,
+        .clear:hover {
+            background-color: red;
+        }
+
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 25px;
+            font-style: bold;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <div class="calculator">
+        <div class="number-input-rows">
+            <input type="number" class="number-input" id="number1" placeholder="Number 1">
+            <input type="number" class="number-input" id="number2" placeholder="Number 2">
+        </div>
+        <button class="keys" onclick="Operate('+')">Add (+)</button>
+        <button class="keys" onclick="Operate('-')">Subtract (-)</button>
+        <button class="keys" onclick="Operate('*')">Multiply (*)</button>
+        <button class="keys" onclick="Operate('/')">Divide (/)</button>
+        <button class="keys clear" onclick="clearInputs()">Clear (C)</button>
+    </div>
+
+    <p class="result" id="result"></p>
+
+    <script>
+        function clearInputs() {
+            // clearing both the inputs
+            document.getElementById('number1').value = ''
+            document.getElementById('number2').value = ''
+
+            // also clearing the answer text
+            document.getElementById('result').innerHTML = ''
+        }
+
+        function displayResult(answer) {
+            document.getElementById('result').innerHTML = `The answer is ${answer}`
+        }
+
+        function getInputs() {
+            num1 = document.getElementById('number1').value
+            num2 = document.getElementById('number2').value
+
+            if ((num1.length == 0) || (num2.length == 0)) {
+                alert('Enter valid numbers')
+                return false;
+            }
+
+            else {
+                return { num1: num1, num2: num2 }
+            }
+        }
+
+        function Operate(operator) {
+            numbers = getInputs()
+            
+            if (numbers) {
+                switch (operator) {
+                    case '*':{
+                        // pareInt and +numbers.num2 is used to convert the string to integer
+                        displayResult(parseInt(numbers.num1) * +numbers.num2)
+                        break;
+                    }
+
+                    case '+':{
+                        displayResult(parseInt(numbers.num1) + +numbers.num2)
+                        break;
+                    }
+
+                    case '-':
+                        displayResult(parseInt(numbers.num1) - +numbers.num2)
+                        break;
+
+                    case '/':{
+                        displayResult(parseInt(numbers.num1) / +numbers.num2)
+                        break;
+                    }
+                    
+
+                    default:
+                        break;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

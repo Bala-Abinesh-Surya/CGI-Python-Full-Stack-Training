@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quotes Generator</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+            box-sizing: content-box;
+        }
+
+        .center{
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        p{
+            color: white;
+            margin-top: 50px;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            transition: 1s ease-out;
+        }
+
+        p:hover{
+            cursor: pointer;
+        }
+        
+        .quote-class{
+            width: 50%;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        #quote{
+            color: white;
+            text-align: center;
+            background-color:chocolate;
+            padding: 15px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <p onclick="showQuote()">Click me, I will show you a quote</p>
+    </div>
+    <div class="quote-class">
+        <p id="quote" style="opacity: 0;"></p>
+    </div>
+
+    <script>
+        quotes = [
+            'Write it on your heart that every day is the best day in the year',
+            'I get up every morning and its going to be a great day',
+            'Todays goals: Coffee and kindness. Maybe two coffees, and then kindness',
+            'Have a great day',
+            'Make hay while the sun rises',
+            'All that glitters are not gold',
+            'Dont give up',
+            'Persistence is everything',
+            'Everything is not perfect',
+            'Eat, Sleep, Conquer, Repeat',
+            'The only time success comes before work is in the dictionary',
+            "I don’t play the odds, I play the man",
+            'Work until you no longer have to introduce yourself'
+        ]
+
+        function showQuote(){
+            // randomly selecting a quote from the array
+            min = 0;
+            max = quotes.length - 1
+            choice = Math.floor(Math.random() * (max - min)) + min
+
+            let quote = quotes[choice]
+            document.getElementById('quote').innerHTML = quote
+            document.getElementById('quote').style.opacity = '1'
+        }
+    </script>
+</body>
+</html>

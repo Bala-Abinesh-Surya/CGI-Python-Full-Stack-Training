@@ -1,0 +1,8 @@
+CREATE TABLE Products(
+    ID BIGINT PRIMARY KEY AUTO_INCREMENT,
+    ProdName VARCHAR(50) NOT NULL,
+    Price INT NOT NULL,
+    ManuDate DATE NOT NULL,
+    ExpDate DATE,
+    Brand VARCHAR(30)
+)

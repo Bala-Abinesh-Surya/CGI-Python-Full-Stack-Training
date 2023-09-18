@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Buttons</title>
+</head>
+<body>
+    <h3>Choose your gender</h3>
+    <input type="radio" value="Male" name="gender"> Male <br>
+    <input type="radio" value="Female" name="gender"> Female <br>
+    <input type="radio" value="Other" name="gender"> Other <br>
+
+    <button onclick="showGender()">Show gender</button>
+    <p id="gender_value"></p>
+
+    <script>
+        function showGender(){
+            var radio_buttons = document.getElementsByName('gender');
+
+            // going through all the radio button elements
+            for (i = 0; i < radio_buttons.length; i++){
+                if(radio_buttons[i].checked){
+                    document.getElementById('gender_value').innerHTML = 'Gender : ' + radio_buttons[i].value;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

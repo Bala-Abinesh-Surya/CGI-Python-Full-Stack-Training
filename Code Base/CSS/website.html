@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample website</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        nav{
+            width: 100%;
+            height: fit-content;
+            text-align: center;
+        }
+
+        nav .nav-upper{
+            background-color: black;
+            padding: 20px 0;
+            color: white;
+        }
+
+        nav .nav-lower{
+            background-color: rgb(98, 83, 83);
+            padding: 10px 0;
+            color: white;
+        }
+
+        nav .nav-lower a{
+            text-decoration: none;
+            margin: 0 5px;
+            color: white;
+        }
+
+        .main{
+            margin: 30px auto;
+            width: 90%;
+            height: fit-content;
+        }
+
+        footer{
+            width: 100%;
+            height: fit-content;
+            background-color: black;
+            text-align: center;
+            color: white;
+        }
+
+        footer p{
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-upper">
+                <h1>My Website</h1>
+            </div>
+            <div class="nav-lower">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="main">
+        <h3>Welcome to my website</h3>
+        <p>This is the main content area</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 My Website. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

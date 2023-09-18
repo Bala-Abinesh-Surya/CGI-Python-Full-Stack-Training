@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            
+        }
+
+        .red{
+            background-color: red;
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            z-index: 1;
+        }
+
+        .blue{
+            background-color: blue;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            z-index: 2;
+        }
+
+        .green{
+            background-color: greenyellow;
+            position: absolute;
+            left: 75px;
+            top: 75px;
+            z-index: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="box red"></div>
+    <div class="box blue"></div>
+    <div class="box green"></div>
+</body>
+</html>

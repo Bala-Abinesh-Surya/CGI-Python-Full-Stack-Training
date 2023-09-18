@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: black;
+            color: white;
+        }
+
+        .container{
+            width: 50%;
+            margin: 200px auto;
+            text-align: center;
+        }
+
+        .container h1{
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .container input{
+            height: 30px;
+            text-indent: 9px;
+        }
+
+        .container button{
+            height: 30px;
+            padding: 0 15px;
+            margin-left: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: red;
+            color: white;
+        }
+
+        .container button:hover{
+            background-color: brown;
+        }
+
+        .container p{
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose a date</h1>
+        <input id="time" type="datetime-local" >
+        <button onclick="new showTime()">Show remaining time</button>
+        <p id="time_remaining">Pick a time to know the interval</p>
+    </div>
+
+    <script>
+        class showTime{
+            constructor(){
+                this.value = document.getElementById('time').value
+                this.chosenTime = new Date(this.value).getTime()
+
+                this.x = setInterval(() => {
+                    // current time
+                    var currentTime = new Date().getTime()    
+    
+                    // distance b/w two times
+                    var distance = this.chosenTime - currentTime
+        
+                    // Time calculations for days, hours, minutes and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+                    // Display the result in the element with id="demo"
+                    document.getElementById("time_remaining").innerHTML = 'TIME REMAINING : ' + days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+    
+                    // If the count down is finished, write some text
+                    if (distance < 0) {
+                        clearInterval(this.x);
+                        document.getElementById("time_remaining").innerHTML = "EXPIRED";
+                    }
+                }, 1000)
+            }
+        }
+    </script>
+</body>
+</html>

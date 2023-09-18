@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Users</title>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+
+    <style>
+        /* || general styles */
+        html {
+            font-family: 'helvetica neue', helvetica, arial, sans-serif;
+        }
+        
+        body {
+            width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1, h2 {
+            font-family: 'Faster One', cursive;
+        }
+        
+        /* header styles */
+        h1 {
+            font-size: 4rem;
+            text-align: center;
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        /* section styles */
+        section article {
+            width: 33%;
+            float: left;
+        }
+        
+        section p {
+            margin: 5px 0;
+        }
+        
+        section ul {
+            margin-top: 0;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            letter-spacing: -5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header"></header>
+    <section></section>
+
+    <script>
+        const header = document.querySelector('.header') // selecting by the class name
+        const section = document.querySelector('section')
+
+        // creating a request
+        let requestURL = 'https://reqres.in/api/users?page=1'
+        let request = new XMLHttpRequest()
+        request.open('GET', requestURL)
+        request.responseType = 'json'
+        request.send()
+
+        // after the request is loaded, executing the following function
+        request.onload = function(){
+            const websiteUsers = request.response
+            
+            populateHeader(websiteUsers)
+            showUsers(websiteUsers)
+        }
+
+        function populateHeader(jsonObject){
+            // creating a h1 element
+            const h1 = document.createElement('h1')
+            h1.textContent = 'Users of my website'
+            
+            // creating a p element
+            const p = document.createElement('p')
+            p.textContent = 'Total Users ' + jsonObject['total'] + ' // Total Pages ' + jsonObject['total_pages']
+
+            // appending the elements to the header
+            header.appendChild(h1)
+            header.appendChild(p)
+        }
+
+        function showUsers(jsonObject){
+            const users = jsonObject['data']
+
+            for(user of users){
+                // creating all the wanted elements
+                const article = document.createElement('article')
+                const h2 = document.createElement('h2')
+                const first = document.createElement('p')
+                const last = document.createElement('p')
+                const email = document.createElement('p')
+                const img = document.createElement('img')
+
+                // adding the text to the elements
+                h2.textContent = user['id']
+                first.textContent = 'First Name: ' + user['first_name']
+                last.textContent = 'Last Name: ' + user['last_name']
+                email.textContent = 'Email: ' + user['email']
+                img.src = user['avatar']
+
+                // adding all the elements to the article
+                article.appendChild(h2)
+                article.appendChild(first)
+                article.appendChild(last)
+                article.appendChild(email)
+                article.appendChild(img)
+
+                // adding the article to the section
+                section.appendChild(article)
+            }
+        }
+    </script>
+</body>
+</html>

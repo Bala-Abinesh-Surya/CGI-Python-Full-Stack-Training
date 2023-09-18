@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table of employees</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="col-md-6 offset-md-3">
+        <div class="element"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script>
+        var element = document.querySelector('.element')
+
+        var employees = [
+            {name: 'Bala Abinesh Surya', address: 'Avaraikulam', phone: '7598369569'},
+            {name: 'Asir Paul', address: 'Pathinathapuram', phone: '7598369569'},
+            {name: 'Ebinesh', address: 'Vadakkankulam', phone: '7598369569'},
+            {name: 'Siva Ujin', address: 'Vadakkankulam', phone: '7598369569'},
+            {name: 'Jeya Hari Prasath', address: 'Madurai', phone: '7598369569'},
+            {name: 'Bala Subramani', address: 'Tirunelveli', phone: '7598369569'}
+        ]
+
+        // creating a table element
+        var table = document.createElement('table')
+        table.className = 'table table-responsive table-striped  table-hover table-dark table-bordered caption-top'
+
+        // creating a caption element
+        var caption = document.createElement('caption')
+        caption.textContent = 'Employees table'
+        table.appendChild(caption)
+
+        // creating table header
+        var thead = document.createElement('thead')
+        var row = document.createElement('tr')
+
+        // creating th
+        var th1 = document.createElement('th')
+        var th2 = document.createElement('th')
+        var th3 = document.createElement('th')
+
+        // adding text content to the th
+        th1.textContent = 'Name'
+        th2.textContent = 'Address'
+        th3.textContent = 'Phone'
+
+        // adding the th to the row
+        row.appendChild(th1)
+        row.appendChild(th2)
+        row.appendChild(th3)
+
+        // adding the row to the thead
+        thead.appendChild(row)
+
+        // adding the th to the table
+        table.appendChild(thead)
+
+        // creating table body
+        var body = document.createElement('tbody')
+
+        // mapping through the employees
+        employees.forEach((employee) => {
+            // creating table rows
+            var row = document.createElement('tr')
+            row.className = 'table-light'
+
+            // creating the table columns
+            var col1 = document.createElement('td')
+            var col2 = document.createElement('td')
+            var col3 = document.createElement('td')
+
+            col1.className = 'table-light'
+            col2.className = 'table-light'
+            col3.className = 'table-light'
+
+            // adding the text to the columns
+            col1.textContent = employee.name
+            col2.textContent = employee.address
+            col3.textContent = employee.phone
+
+            // adding the columns to the table row
+            row.appendChild(col1)
+            row.appendChild(col2)
+            row.appendChild(col3)
+
+            // adding the row to the table body
+            body.appendChild(row)
+        })
+
+        // appending the body to the table
+        table.appendChild(body)
+
+        // adding the table to the div
+        element.appendChild(table)
+    </script>
+</body>
+</html>

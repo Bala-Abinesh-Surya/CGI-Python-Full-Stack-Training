@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample website</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        nav{
+            width: 100%;
+            height: fit-content;
+            text-align: center;
+        }
+
+        nav .nav-upper{
+            background-color: black;
+            padding: 25px 0;
+            color: white;
+        }
+
+        .main{
+           width: 60%;
+           margin: 0 auto;
+           padding: 20px;
+           background-color: #FFFFF7;
+        }
+
+        .main-container{
+            display: flex;
+        }
+
+        .main-container .left{
+            flex-basis: 70%;
+            background-color: white;
+        }
+
+        .main-container .right{
+            flex-basis: 30%;
+            justify-content: end;
+        }
+
+        .main-container .right h3{
+            padding-bottom: 8px;
+        }
+
+        
+
+        footer{
+            width: 100%;
+            height: fit-content;
+            background-color: black;
+            text-align: center;
+            color: white;
+        }
+
+        footer p{
+            padding: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-upper">
+                <h1>My Website</h1>
+            </div>
+        </nav>
+    </header>
+
+    <section class="main">
+        <div class="main-container">
+            <div class="left">
+                <h3>Welcome to my website</h3>
+                <p>This is the main content area</p>
+            </div>
+            <div class="right">
+                <h3>Sidebar</h3>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 My Website. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

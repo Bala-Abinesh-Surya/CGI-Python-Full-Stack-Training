@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Overflow Clone</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #fff;
+        }
+
+        nav{
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 50px;
+            height: fit-content;
+            align-items: center;
+        }
+
+        nav .nav-right ul li{
+            display: inline;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        nav .nav-right ul li a{
+            color: white;
+            text-decoration: none;
+        }
+
+        .main{
+            width: 90%;
+            margin: 50px auto;
+        }
+
+        .main .content{
+            padding: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 5px 7px 29px 0px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .main .content:hover{
+            background-color: rgba(100, 100, 111, 0.1);
+            box-shadow: none;
+        }
+
+        .main .content h3{
+            color: blue;
+            text-decoration: underline;
+            font-size: 20px;
+        }
+
+        .main .content p{
+            color: black;
+            margin: 8px 0;
+            font-size: 13px;
+        }
+
+        .main .content .stats{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #787878;
+        }
+
+        footer{
+            background-color: black;
+            text-align: center;
+            padding: 5px 0;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <h2>Stack Overflow Clone</h2>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Questions</a></li>
+                    <li><a href="#">Tags</a></li>
+                    <li><a href="#">Users</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="main">
+        <div class="content">
+            <h3>How to create a Stack Overflow Clone?</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt sequi, esse dolorem eos laboriosam vitae?</p>
+            <div class="stats">
+                <span>25 votes</span>
+                <span>10 answers</span>
+                <span>1000 views</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>&copy; 2023 Stack Overflow Clone. All Rights Reserved.</footer>
+</body>
+</html>
