@@ -1,0 +1,9 @@
+{
+    "employees": [
+        {"id": 1, "firstName": "Bala", "lastName": "Abinesh", "gender": "Male", "address": "Avaraikulam"},
+        {"id": 2, "firstName": "Asir", "lastName": "Paul", "gender": "Male", "address": "Vadakkankulam"},
+        {"id": 3, "firstName": "Ebinesh", "lastName": null, "gender": "Male", "address": "Vadakkankulam"},
+        {"id": 4, "firstName": "Ajin", "lastName": null, "gender": "Male", "address": "Coimbatore"},
+        {"id": 5, "firstName": "Jeya Hari", "lastName": "Prasath", "gender": "Male", "address": "Avaraikulam"}
+    ]
+}

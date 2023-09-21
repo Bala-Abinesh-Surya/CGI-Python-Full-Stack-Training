@@ -1,0 +1,12 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Hello World!"
+    },
+    {
+      "id": 2,
+      "title": "React is way better than Angular"
+    }
+  ]
+}
