@@ -14,7 +14,7 @@ function App() {
     // run the json-server first before starting the app
     // command for starting: json-server --watch <db.json> --port 3001
     // <db.json> => posts.json for adding and fetching posts
-    // <db.json> => employee.json for fetching the employees
+    // <employee.json> => employee.json for fetching the employees
     <FetchEmployeeData />
   );
 }

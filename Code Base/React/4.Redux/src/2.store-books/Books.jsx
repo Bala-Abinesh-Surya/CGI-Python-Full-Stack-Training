@@ -12,6 +12,7 @@ function Book({books, addNewBook}){
         event.preventDefault()
 
         addNewBook(bookName)
+        setBookName('')
     }
 
     return (
