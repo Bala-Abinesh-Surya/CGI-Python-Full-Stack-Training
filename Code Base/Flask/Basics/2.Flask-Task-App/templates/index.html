@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Tasks App</title>
+</head>
+<body>
+    <h2>Flask Tasks App</h2>
+    <form method="post" action="{{ url_for('add') }}">
+        <input type="text" placeholder="Add a task" name="task" required />
+        <button type="submit">Add task</button>
+    </form>
+
+    {% for task in tasks %}
+        <li>{{ task }}</li>
+    {% endfor %}
+</body>
+</html>

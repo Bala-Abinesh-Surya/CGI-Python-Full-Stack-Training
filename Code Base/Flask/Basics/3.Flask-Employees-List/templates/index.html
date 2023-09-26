@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Employees List</title>
+</head>
+<body>
+    <h3>Flask Employees List</h3>
+    <form method="post" action="{{ url_for('add_employee') }}">
+        <input type="text" name="employee" placeholder="Add an Employee" required />
+        <button>Add Employee</button>
+    </form>
+
+    {% for employee in employees %}
+        <li>{{ employee }}</li>
+    {% endfor %}
+</body>
+</html>
