@@ -18,10 +18,11 @@ def handle_tasks():
     
     else:
         new_task = request.json
+        new_task['id'] = len(tasks)+1
         tasks.append(new_task)
         return jsonify({"message": "Task added successfully"}), 201
-    
-    
-    
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)

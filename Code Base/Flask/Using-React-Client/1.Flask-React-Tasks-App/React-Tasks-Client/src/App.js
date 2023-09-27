@@ -18,10 +18,10 @@ function App() {
   }
 
   return (
-    <>
-    <FetchTasks tasks={tasks} />
-    <AddTasks reload={changeReload}/>
-    </>
+    <div className="col-md-6 offset-md-3 mt-3 mb-3">
+      <AddTasks reload={changeReload}/>
+      <FetchTasks tasks={tasks} />
+    </div>
   );
 }
 
