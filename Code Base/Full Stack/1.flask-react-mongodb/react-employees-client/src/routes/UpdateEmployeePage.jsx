@@ -31,6 +31,8 @@ export default function UpdateEmployeePage() {
 
     const response = await axios.put(
       `http://127.0.0.1:5000/employees/update/${employee["_id"]}`,
+      // sending all the employee fields except _id
+      // because, that need not be updated (or immutable)
       {
         name: employee["name"],
         age: employee["age"],
