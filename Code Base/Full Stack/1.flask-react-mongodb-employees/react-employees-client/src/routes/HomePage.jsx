@@ -49,7 +49,7 @@ function HomePage() {
               </td>
               <td>
                 <button
-                  className="btn btn-danger"
+                  className="btn btn-danger btn-sm"
                   onClick={() => deleteEmployee(employee["_id"])}
                 >
                   Delete
