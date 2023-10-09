@@ -4,6 +4,7 @@ from flask_restful import Api, Resource, reqparse
 app = Flask(__name__)
 api = Api(app)
 
+# saving the products locally
 products = []
 
 parser = reqparse.RequestParser()
@@ -51,19 +52,23 @@ class Products(Resource):
 
                 return {"message": "Product got updated!"}, 201
 
-        return {"message": "Product not found!"}, 404
+        return {"message": "Product not found!", "updatedProduct": product}, 404
 
     def delete(self, product_id):
+        index = 0
+      
         for product in products:
             if product['id'] == product_id:
-                products.pop(product)
-
+                products.pop(index)
+        
                 return {"message": "Product deleted successfully!"}, 201
+              
+            index+=1
 
         return {"message": "Product not found!"}, 404
 
 
-api.add_resource(Products, '/products', '/products/<string:product_id>')
+api.add_resource(Products, '/products', '/products/<int:product_id>')
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=5000)
